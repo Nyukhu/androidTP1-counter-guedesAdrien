@@ -6,4 +6,8 @@
     <string name="operande_1">opérande 1</string>
     <string name="operande_2">opérande 2</string>
     <string name="calc">calc</string>
+    <string name="calulatrice">calulatrice</string>
+    <string name="mail">mail</string>
+    <string name="send">send</string>
+    <string name="text_to_send">text to send</string>
 </resources>
