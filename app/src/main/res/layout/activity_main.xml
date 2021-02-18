@@ -48,9 +48,39 @@
             android:text="@string/count"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/first_op_field"
             android:background="@color/colorPrimary"
             android:textColor="@color/colorAccent"
             />
+
+        <EditText
+            android:id="@+id/first_op_field"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/operande_1"
+            app:layout_constraintBottom_toTopOf="@id/second_op_field"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            >
+
+        </EditText>
+        <EditText
+            android:id="@+id/second_op_field"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/operande_2"
+            app:layout_constraintBottom_toTopOf="@id/compute_button"
+            >
+
+        </EditText>
+        <Button
+            android:id="@+id/compute_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/calc"
+            >
+
+        </Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,7 @@
     <string name="toast">TOAST</string>
     <string name="counter">0</string>
     <string name="count">count</string>
+    <string name="operande_1">opérande 1</string>
+    <string name="operande_2">opérande 2</string>
+    <string name="calc">calc</string>
 </resources>

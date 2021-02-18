@@ -9,39 +9,51 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gadrien456.gmail.counter.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonToast;
-    private Button buttonInc;
-    private TextView textViewCount;
     private Integer counter = 0;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         initViews();
 
     }
     private void initViews() {
-        buttonToast = findViewById(R.id.toastButton);
-        buttonInc = findViewById(R.id.button2);
-        textViewCount = findViewById(R.id.counter);
-        buttonInc.setOnClickListener(new View.OnClickListener() {
+
+        binding.button2.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 counter ++;
-                textViewCount.setText(counter.toString());
+                binding.counter.setText(counter.toString());
             }
         });
-        buttonToast.setOnClickListener(new View.OnClickListener() {
+        binding.toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, counter.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, binding.counter.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+        binding.computeButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                double op1 =  Double.parseDouble(String.valueOf(binding.firstOpField.getText()));
+                double op2 =  Double.parseDouble(String.valueOf(binding.secondOpField.getText()));
+                double calcResult = op1 + op2;
+                Toast.makeText(MainActivity.this, Double.toString(calcResult),Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
 
 }
